@@ -1,40 +1,52 @@
 <template>
-  <div class="carousel">
-    <!-- Imagenes -->
-    <div class="carousel_container">
-      <a
-        v-if="objImages[currentIndex].link"
-        :href="objImages[currentIndex].link"
-        target="_blank"
-        rel=""
-      >
+  <div class="background_container">
+    <div v-if="isLoaded" class="carousel">
+      <!-- Imagenes -->
+      <div class="carousel_container">
+        <a
+          v-if="objImages[currentIndex].link"
+          :href="objImages[currentIndex].link"
+          target="_blank"
+          rel=""
+        >
+          <img
+            :src="objImages[currentIndex].image"
+            alt="Imagen del carrusel"
+            class="carousel_image"
+          />
+        </a>
         <img
+          v-else
           :src="objImages[currentIndex].image"
           alt="Imagen del carrusel"
-          class="carousel_image"
+          class="carousel_image_no_link"
         />
-      </a>
-      <img
-        v-else
-        :src="objImages[currentIndex].image"
-        alt="Imagen del carrusel"
-        class="carousel_image_no_link"
-      />
+      </div>
+
+      <!-- Controles -->
+      <button @click="prevImage" class="carousel_btn left">&#10094;</button>
+      <button @click="nextImage" class="carousel_btn right">&#10095;</button>
+
+      <!-- Indicadores -->
+      <div class="indicators">
+        <span
+          v-for="(slide, index) in objImages"
+          :key="index"
+          :class="{ active: index === currentIndex }"
+          @click="goToImage(index)"
+        >
+        </span>
+      </div>
     </div>
-
-    <!-- Controles -->
-    <button @click="prevImage" class="carousel_btn left">⬅</button>
-    <button @click="nextImage" class="carousel_btn right">➡</button>
-
-    <!-- Indicadores -->
-    <div class="indicators">
-      <span
-        v-for="(slide, index) in objImages"
-        :key="index"
-        :class="{ active: index === currentIndex }"
-        @click="goToImage(index)"
+    <div class="cont_buttons">
+      <a
+        href="https://news.google.com/home?hl=es-419&gl=CL&ceid=CL:es-419"
+        target="_blank"
+        rel=""
+        class="become"
+        >BECOME A PATRON</a
       >
-      </span>
+      <router-link to="/download" class="download">DOWNLOAD GAME</router-link>
     </div>
   </div>
 </template>
@@ -48,6 +60,7 @@ import image3 from "@/assets/images/news/image3.png";
 
 export default {
   setup() {
+    const isLoaded = ref(false);
     // luego agregar en esta parte las imagenes que se deseen mostrar en el carrusel
     // y su link si es que esta lo tiene
     const objImages = ref([
@@ -94,7 +107,22 @@ export default {
       clearInterval(interval);
     };
 
+    const preloadImages = () => {
+      let loadedCount = 0;
+      objImages.value.forEach((item) => {
+        const img = new Image();
+        img.src = item.image;
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === objImages.value.length) {
+            isLoaded.value = true;
+          }
+        };
+      });
+    };
+
     onMounted(() => {
+      preloadImages();
       startAutoSlide();
     });
 
@@ -109,29 +137,37 @@ export default {
       prevImage,
       goToImage,
       startAutoSlide,
+      isLoaded,
     };
   },
 };
 </script>
 
 <style scoped>
-.carousel {
-  background-color: aqua;
+.background_container {
+  background-image: url("@/assets/images/bgprim.png");
+  width: 100%;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
   position: relative;
-  /* width: 800px;
-  height: 400px; */
+  padding: 4rem 0rem 4rem 0rem;
+  transition: 0.5s all;
+}
+
+.carousel {
+  position: relative;
   width: 70%;
-  height: 100%;
   margin: auto;
   overflow: hidden;
   border-radius: 10px;
 }
 
 .carousel_container {
-  background-color: yellowgreen;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel_container a {
@@ -198,5 +234,107 @@ export default {
 
 .indicators span.active {
   background-color: white;
+}
+
+.cont_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+  gap: 3rem;
+}
+
+.cont_buttons a {
+  --color: #560bad;
+  font-family: inherit;
+  display: inline-block;
+  width: 12em;
+  line-height: 2.5em;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  font-size: 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: rgb(254, 33, 246);
+  background-color: rgba(77, 29, 84, 0.5);
+  text-decoration: none;
+  text-align: center;
+  z-index: 1;
+}
+
+.cont_buttons a:before {
+  content: "";
+  position: absolute;
+  background: var(--color);
+  height: 120px;
+  width: 400px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+a:hover {
+  color: #fff;
+}
+
+a:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+a:hover:before {
+  top: -2rem;
+  left: -2rem;
+}
+
+a:active:before {
+  background: #3a0ca3;
+  transition: background 0s;
+}
+
+@media (max-width: 1050px) {
+  .background_container {
+    min-height: 400px;
+  }
+
+  .cont_buttons button {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .background_container {
+    min-height: 300px;
+    padding: 2rem 0rem 2rem 0rem;
+  }
+
+  .cont_buttons button {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 559px) {
+  .cont_buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel {
+    width: 85%;
+  }
+}
+
+@media (max-width: 460px) {
+  .background_container {
+    min-height: 500px;
+    padding: 3rem 0rem 3rem 0rem;
+  }
+
+  .carousel {
+    width: 100%;
+  }
 }
 </style>

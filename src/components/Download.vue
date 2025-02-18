@@ -1,79 +1,261 @@
 <template>
-  <div class="container">
-    <h1>DOWNLOAAAAAAA</h1>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, odit.
-      Est delectus culpa voluptatibus, provident saepe sunt rem amet error
-      minima eligendi eum facere consequatur recusandae ea voluptatem blanditiis
-      a? Omnis rerum repudiandae quisquam, eum reprehenderit labore
-      necessitatibus consequuntur est. Illo tempore corporis earum, quae eum
-      ducimus? Cum, animi, suscipit, repellendus dignissimos dolorum deserunt
-      nobis similique consequatur eos perferendis hic. Deleniti illum
-      accusantium libero culpa quae architecto sint consectetur aut temporibus
-      magni, qui autem inventore in nisi dignissimos. Voluptatibus, sapiente
-      enim consectetur optio sint asperiores non porro eaque sequi sit! Incidunt
-      voluptas soluta ea quam enim commodi, nobis architecto ratione dolorem
-      nisi itaque voluptates, unde, suscipit voluptatum quia saepe sequi veniam
-      eaque nihil odit amet doloribus! Nesciunt culpa enim iure. Quae nam
-      perferendis pariatur in perspiciatis, nihil culpa provident dolore fuga!
-      Quidem perferendis, quibusdam exercitationem voluptatem voluptate eius,
-      ipsam velit sunt iure excepturi minus sapiente vel neque dolorum facere
-      dolor? Totam, architecto incidunt temporibus ullam, possimus fuga,
-      corporis fugiat earum ipsa rerum necessitatibus! Voluptates rem illum
-      voluptatem nihil vero. Dignissimos aliquid pariatur expedita repellat
-      reiciendis ab quas temporibus suscipit perspiciatis! Eos mollitia totam
-      amet fugit eum maiores libero! Quaerat explicabo inventore eaque repellat
-      voluptates? Magnam et amet eos ut atque. Quas eveniet voluptatum officia
-      saepe quod maxime eligendi fugiat id! Suscipit reprehenderit praesentium
-      doloremque distinctio, deserunt delectus obcaecati quos omnis eveniet quas
-      consectetur doloribus fuga, itaque deleniti, vitae atque sint harum
-      accusantium inventore nam? Nesciunt reiciendis voluptatibus ea quibusdam
-      amet? Accusantium cumque aliquam sit cum. Veritatis molestiae ullam,
-      tempora enim voluptate necessitatibus accusamus excepturi cum dolore, ut
-      molestias eos labore sint modi eius recusandae debitis dolor fugit ex
-      adipisci illum! Veritatis, maiores. Accusamus eveniet debitis perspiciatis
-      aperiam excepturi? Dolorum minus error tempora et sit? Totam voluptatibus
-      voluptatem velit. Illum eius officiis ex sint officia ipsa nostrum,
-      accusantium unde blanditiis laboriosam! Dolor quia tempore id officia ut
-      facilis perferendis! Dolorum, dolore! Culpa eius ea repudiandae nam?
-      Laudantium ad explicabo assumenda neque, iusto, dolores, recusandae beatae
-      eos dolorum voluptate voluptates ea ipsam! Consequuntur cum eveniet, sit
-      architecto quis voluptatum incidunt sunt nemo voluptates nam labore atque
-      quae voluptas fugiat debitis quisquam facere facilis dolore minus quo?
-      Maiores tenetur iure nulla ipsa eaque. Non, eius cupiditate assumenda
-      corrupti sint, minus consequuntur nisi sequi aperiam tenetur animi
-      repellendus provident beatae veniam quae quas accusamus facilis quaerat
-      earum ratione, autem et. Ipsam recusandae odio voluptatibus? Eum itaque
-      esse rem assumenda rerum libero tempore reiciendis iusto pariatur dicta
-      possimus odio, delectus cum architecto ullam aliquid quasi ab suscipit
-      fugit nisi maiores labore consequuntur similique. Quam, illum! Excepturi
-      deserunt similique laborum placeat in aperiam quia soluta, quibusdam
-      harum. Obcaecati eius similique repellat voluptatum eum consequuntur ea
-      autem consectetur. Dignissimos deserunt minus mollitia, quod vitae
-      accusantium tempora non. Soluta, aperiam vel debitis at, quaerat est aut
-      fugit autem mollitia cupiditate, nobis quidem. Inventore, debitis esse
-      natus ratione animi veritatis itaque adipisci, quos praesentium in nihil
-      beatae modi delectus. Laborum voluptatum dolor tempora qui accusantium
-      assumenda molestias, voluptate sapiente consequatur aut provident
-      distinctio iure ad debitis explicabo itaque reiciendis saepe quasi! Magni
-      voluptatibus, fuga sapiente nihil dicta ab alias? Labore omnis mollitia,
-      qui tempora deleniti animi excepturi consequuntur nostrum doloribus odio
-      quo assumenda, cupiditate fugiat sint adipisci explicabo nobis consequatur
-      laboriosam maxime. Officia maxime, labore facere hic expedita consectetur.
-      Delectus veritatis quae odio dolor porro quisquam optio ipsum, cum itaque
-      eveniet, eum consectetur voluptates sequi doloremque perferendis omnis in
-      temporibus nostrum laudantium maiores molestias necessitatibus deserunt
-      quasi. Incidunt, officiis. Asperiores alias facere nobis amet placeat
-      aperiam velit tenetur deserunt accusantium unde, voluptate explicabo
-      temporibus officiis, iusto soluta quia eligendi dolores maiores aspernatur
-      nihil iste sunt dignissimos ducimus! Ea, qui.
-    </p>
+  <div class="container_download">
+    <div class="title">
+      <img :src="titleCharacters" alt="" />
+    </div>
+    <div class="cont_links">
+      <div class="cont_box">
+        <img :src="char" alt="" />
+        <div class="links">
+          <h2>MEDIAFIRE LINKS:</h2>
+          <p>
+            WIN/LINUX:<a
+              href="https://www.mediafire.com/file_premium/68o48tcsapp5vdf/Lucky_Paradox-v0.9.5Final-pc.zip/file"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+          <p>
+            ANDROID:<a
+              href="https://www.mediafire.com/file_premium/s9gmicxuened0ep/LPX95FINAL.rar/file"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+          <p>
+            MAC:<a
+              href="https://www.mediafire.com/file_premium/oydtioc92t1x4xh/Lucky_Paradox-v0.9.5Final-mac.zip/file"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+          <p>
+            COMPRESSED:<a
+              href="https://www.mediafire.com/file_premium/9lojpbbkoatg3qh/Lucky_Paradox-v0.9.5cFinal-pc.zip/file"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="cont_box">
+        <img :src="layla" alt="" />
+        <div class="links">
+          <h2>GOOGLE DRIVE LINKS:</h2>
+          <p>
+            WIN/LINUX:<a
+              href="https://drive.google.com/file/d/1YGVNt4R_Al81ENL9TwKvrsIG88P9BfbU/view?usp=sharing"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+          <p>
+            ANDROID:<a
+              href="https://drive.google.com/file/d/1_pvF7NVI7kAkn4HTsCt9e3fIrC-P9pqU/view?usp=sharing"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+          <p>
+            MAC:<a
+              href="https://drive.google.com/file/d/1i5BIFzvf4mL2Q_EAaA6NKqWKu2BczuMZ/view?usp=sharing"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+          <p>
+            COMPRESSED:<a
+              href="https://drive.google.com/file/d/15SrBpMcU8KViwbSYce7Em3mky1bfJDdB/view?usp=sharing"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="cont_box">
+        <img :src="liz" alt="" />
+        <div class="links">
+          <h2>MEGA LINKS:</h2>
+          <p>
+            WIN/LINUX:<a
+              href="https://mega.nz/file/bzJxiC7D#19Ds2KmA1yXqOx3rqU0szHMytuCZ-1riZhHW8C1OQJ4"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+          <p>
+            ANDROID:<a
+              href="https://mega.nz/file/6z5hjALY#hkLFXeeodOOgkr3I5u3CAeRdRI7qri7d2lHXm9eKd7c"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+          <p>
+            MAC:<a
+              href="https://mega.nz/file/Pq5ESTKA#TA4QdztVe6F_oKeD_4SfpkVwV2LIeXuQYSedITwDMIs"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+          <p>
+            COMPRESSED:<a
+              href="https://mega.nz/file/jmAlCQJA#n2dC9gYfZtxSRFfjifJdnHxQCWkF8O2uYjqSEhXsJ9E"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="cont_box">
+        <img :src="mary" alt="" />
+        <div class="links">
+          <h2>LINKS:</h2>
+          <p>
+            If you just prefer to download the new content, and you already have
+            version 0.9.4, just unzip and then copy and paste the content into
+            the Lucky Paradox game folder, if it asks you to replace, press YES!
+            MEGA
+          </p>
+          <p>MEGA LINKS</p>
+          <p>
+            UPDATE PATCH:<a
+              href="https://mega.nz/file/Gmo3CDAb#xHXwWXs9kmnh0RUtlqUqEQ_8B_HdqaS7jxoAbDipqP8"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+          <p>GOOGLE DRIVE LINKS</p>
+          <p>
+            UPDATE PATCH:<a
+              href="https://drive.google.com/file/d/1Nxp_PBQt3GGk7HKhmNqnmIR15eTXr1ZQ/view?usp=sharing"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+          <p>MEDIAFIRE LINKS</p>
+          <p>
+            UPDATE PATCH:<a
+              href="https://www.mediafire.com/file_premium/6gvtfnkct2kvodb/Update95Final.rar/file"
+              target="_blank"
+              rel="external"
+              >Ingresar al link</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import titleCharacters from "@/assets/images/characters/chartitle.png";
+import char from "@/assets/images/characters/Social_char_1080p.png";
+import layla from "@/assets/images/characters/Social_layla_1080p.png";
+import liz from "@/assets/images/characters/Social_liz_1080p.png";
+import mary from "@/assets/images/characters/Social_mary_1080p.png";
+
+export default {
+  setup() {
+    return {
+      titleCharacters,
+      char,
+      layla,
+      liz,
+      mary,
+    };
+  },
+};
 </script>
 
 <style scoped>
+.container_download {
+  min-height: 100vh;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 3rem;
+}
+
+.cont_links {
+  width: 60%;
+  margin-bottom: 8rem;
+}
+
+.cont_box {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 4rem;
+}
+
+a {
+  margin-left: 0.5rem;
+  color: #009dff;
+}
+
+h2,
+p {
+  color: #cacaca;
+  margin-bottom: 0.5rem;
+}
+
+.cont_box img {
+  width: 15rem;
+}
+
+@media (max-width: 1250px) {
+  .cont_links {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .cont_links {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .cont_box {
+    display: grid;
+    place-items: center;
+  }
+
+  .links {
+    margin: 1rem 0rem 0rem 0rem;
+  }
+
+  .cont_box img {
+    width: 13rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .cont_box img {
+    width: 10rem;
+  }
+}
 </style>

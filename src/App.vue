@@ -3,17 +3,18 @@
   <div class="container">
     <RouterView></RouterView>
   </div>
+  <Footer></Footer>
 </template>
 
 <script>
 import { RouterView } from "vue-router";
-import Inicio from "./components/Inicio.vue";
 import MenuPrincipal from "./components/MenuPrincipal.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   components: {
     MenuPrincipal,
-    Inicio,
+    Footer,
   },
 };
 </script>

@@ -1,31 +1,51 @@
 <template>
   <nav class="container_menu_principal">
-    <!-- recordar crear el logo como un link hacia el inicio de la pagina -->
-    <!-- Home -->
     <router-link to="/">
       <img :src="logo" alt="" />
     </router-link>
     <div class="cont_menu">
-      <router-link to="/">About</router-link>
+      <router-link to="/about">About</router-link>
       <router-link to="/download">Download</router-link>
       <a :href="linkPatreon" target="_blank" rel="">Patreon</a>
       <a :href="linkWiki" target="_blank" rel="">Wiki</a>
     </div>
     <div class="cont_menu_mob">
-      <label class="burger" for="burger">
-        <input type="checkbox" id="burger" />
+      <!-- Botón de menú -->
+      <div class="menu-icon" :class="{ open: isOpen }" @click="toggleMenu">
         <span></span>
         <span></span>
         <span></span>
-        <div class="menu_options">
-          <!-- <router-link to="/">About</router-link> -->
-          <!-- <router-link to="/download">Download</router-link> -->
-          <a href="/">About</a>
-          <a href="/download">Download</a>
-          <a :href="linkPatreon" target="_blank" rel="">Patreon</a>
-          <a :href="linkWiki" target="_blank" rel="">Wiki</a>
+      </div>
+
+      <!-- Menú Móvil -->
+      <Transition name="fade">
+        <div v-if="isOpen" class="menu-overlay">
+          <nav class="menu-nav">
+            <router-link to="/about" @click="closeMenu" class="menu-item"
+              >About</router-link
+            >
+            <router-link to="/download" @click="closeMenu" class="menu-item"
+              >Download</router-link
+            >
+            <a
+              :href="linkPatreon"
+              @click="closeMenu"
+              target="_blank"
+              rel=""
+              class="menu-item"
+              >Patreon</a
+            >
+            <a
+              :href="linkWiki"
+              @click="closeMenu"
+              target="_blank"
+              rel=""
+              class="menu-item"
+              >Wiki</a
+            >
+          </nav>
         </div>
-      </label>
+      </Transition>
     </div>
   </nav>
 </template>
@@ -38,11 +58,23 @@ export default {
   setup() {
     const linkPatreon = ref("https://www.google.com");
     const linkWiki = ref("https://www.youtube.com");
+    const isOpen = ref(false);
+
+    const toggleMenu = () => {
+      isOpen.value = !isOpen.value;
+    };
+
+    const closeMenu = () => {
+      isOpen.value = false;
+    };
 
     return {
       logo,
       linkPatreon,
       linkWiki,
+      isOpen,
+      toggleMenu,
+      closeMenu,
     };
   },
 };
@@ -58,8 +90,7 @@ export default {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* opacity: 0.5; */
-  z-index: 1;
+  z-index: 2;
 }
 
 img {
@@ -119,107 +150,91 @@ span {
     margin-right: 4rem;
   }
 
-  .burger {
-    position: relative;
-    width: 20px;
-    height: 15px;
-    background: transparent;
-    cursor: pointer;
-    display: block;
-  }
-
-  .burger input {
-    display: none;
-  }
-
-  .burger span {
-    display: block;
-    position: absolute;
-    height: 4px;
-    width: 100%;
-    background: #cacaca;
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
-  }
-
-  .burger span:nth-of-type(1) {
-    top: 0px;
-    transform-origin: left center;
-  }
-
-  .burger span:nth-of-type(2) {
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: left center;
-  }
-
-  .burger span:nth-of-type(3) {
-    top: 100%;
-    transform-origin: left center;
-    transform: translateY(-100%);
-  }
-
-  .burger input:checked ~ span:nth-of-type(1) {
-    transform: rotate(45deg);
-    top: 0px;
-    left: 4px;
-  }
-
-  .burger input:checked ~ span:nth-of-type(2) {
-    width: 0%;
-    opacity: 0;
-  }
-
-  .burger input:checked ~ span:nth-of-type(3) {
-    transform: rotate(-45deg);
-    top: 14px;
-    left: 4px;
-  }
-
-  .burger input:checked ~ .menu_options {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .menu_options {
-    background-color: rgb(0, 0, 0);
-    position: absolute;
-    width: 15rem;
-    height: 20rem;
-    top: 4rem;
-    right: 0;
+  .menu-icon {
+    position: fixed;
+    z-index: 50;
+    width: 30px;
+    height: 20px;
     display: flex;
     flex-direction: column;
-    opacity: 0;
-    visibility: hidden;
-    user-select: none;
-    transition: opacity 0.5s ease, max-height 0.5s ease, visibility 0.5s ease;
-    gap: 2px;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 0)
-    );
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    justify-content: space-between;
+    cursor: pointer;
   }
 
-  .menu_options a {
-    position: relative;
-    display: flex;
-    align-items: center;
-    color: #cacaca;
-    font-weight: 600;
-    right: 4rem;
+  .menu-icon span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 0.1rem;
+    background: white;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .menu-icon.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-icon.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    text-decoration: none;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 40;
   }
 
-  .menu_options a:hover {
-    color: #ffff;
+  .close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 2rem;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .menu-item {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  .menu-item:hover {
+    background: gray;
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
   }
 
   img {
@@ -227,11 +242,7 @@ span {
   }
 }
 
-@media (max-width: 375px) {
-  .container_menu_principal {
-    /* justify-content: space-between; */
-  }
-
+@media (max-width: 460px) {
   .container_menu_principal a {
     margin-left: 1rem;
   }
@@ -241,7 +252,7 @@ span {
   }
 
   .cont_menu_mob {
-    margin-right: 1rem;
+    margin-right: 3rem;
   }
 }
 </style>
