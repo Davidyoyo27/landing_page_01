@@ -7,7 +7,7 @@
           v-if="objImages[currentIndex].link"
           :href="objImages[currentIndex].link"
           target="_blank"
-          rel=""
+          rel="external"
         >
           <img
             :src="objImages[currentIndex].image"
@@ -39,14 +39,10 @@
       </div>
     </div>
     <div class="cont_buttons">
-      <a
-        href="https://news.google.com/home?hl=es-419&gl=CL&ceid=CL:es-419"
-        target="_blank"
-        rel=""
-        class="become"
-        >BECOME A PATRON</a
-      >
-      <router-link to="/download" class="download">DOWNLOAD GAME</router-link>
+      <a href="https://news.google.com/home?hl=es-419&gl=CL&ceid=CL:es-419" target="_blank" rel="external">
+        <img :src="button_patreon" alt="" class="img_patron">
+      </a>
+      <router-link to="/download" class="download_game">DOWNLOAD GAME</router-link>
     </div>
   </div>
 </template>
@@ -57,6 +53,7 @@ import { ref, onMounted, onUnmounted } from "vue";
 import image1 from "@/assets/images/news/image1.png";
 import image2 from "@/assets/images/news/image2.png";
 import image3 from "@/assets/images/news/image3.png";
+import button_patreon from "@/assets/images/socialmedia/patreon-1-892x610.png";
 
 export default {
   setup() {
@@ -138,6 +135,7 @@ export default {
       goToImage,
       startAutoSlide,
       isLoaded,
+      button_patreon,
     };
   },
 };
@@ -238,13 +236,13 @@ export default {
 
 .cont_buttons {
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
   margin-top: 3rem;
   gap: 3rem;
 }
 
-.cont_buttons a {
+.cont_buttons .download_game {
   --color: #560bad;
   font-family: inherit;
   display: inline-block;
@@ -265,7 +263,14 @@ export default {
   z-index: 1;
 }
 
-.cont_buttons a:before {
+.img_patron{
+  display: flex;
+  width: 20rem;
+  height: 6rem;
+  box-shadow: 7px 10px 10px 1px rgba(255, 255, 255, 0.2);
+}
+
+.cont_buttons .download_game:before {
   content: "";
   position: absolute;
   background: var(--color);
@@ -318,8 +323,7 @@ a:active:before {
 
 @media (max-width: 559px) {
   .cont_buttons {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
   }
 
   .carousel {
@@ -335,6 +339,16 @@ a:active:before {
 
   .carousel {
     width: 100%;
+  }
+
+  .cont_buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* .download_game */
+  .cont_buttons a {
+    margin-left: 2rem;
   }
 }
 </style>

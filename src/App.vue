@@ -4,17 +4,20 @@
     <RouterView></RouterView>
   </div>
   <Footer></Footer>
+  <MenuSticky></MenuSticky>
 </template>
 
 <script>
 import { RouterView } from "vue-router";
 import MenuPrincipal from "./components/MenuPrincipal.vue";
 import Footer from "./components/Footer.vue";
+import MenuSticky from "./components/MenuSticky.vue";
 
 export default {
   components: {
     MenuPrincipal,
     Footer,
+    MenuSticky,
   },
 };
 </script>

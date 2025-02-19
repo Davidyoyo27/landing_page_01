@@ -6,8 +6,8 @@
     <div class="cont_menu">
       <router-link to="/about">About</router-link>
       <router-link to="/download">Download</router-link>
-      <a :href="linkPatreon" target="_blank" rel="">Patreon</a>
-      <a :href="linkWiki" target="_blank" rel="">Wiki</a>
+      <a :href="linkPatreon" target="_blank" rel="external">Patreon</a>
+      <a :href="linkWiki" target="_blank" rel="external">Wiki</a>
     </div>
     <div class="cont_menu_mob">
       <!-- Botón de menú -->
@@ -31,7 +31,7 @@
               :href="linkPatreon"
               @click="closeMenu"
               target="_blank"
-              rel=""
+              rel="external"
               class="menu-item"
               >Patreon</a
             >
@@ -39,7 +39,7 @@
               :href="linkWiki"
               @click="closeMenu"
               target="_blank"
-              rel=""
+              rel="external"
               class="menu-item"
               >Wiki</a
             >
@@ -187,7 +187,7 @@ span {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     background: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;

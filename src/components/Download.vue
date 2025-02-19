@@ -1,7 +1,7 @@
 <template>
   <div class="container_download">
     <div class="title">
-      <img :src="titleCharacters" alt="" />
+      <img :src="banner_downloads" alt="banner_seccion" />
     </div>
     <div class="cont_links">
       <div class="cont_box">
@@ -162,7 +162,7 @@
 </template>
 
 <script>
-import titleCharacters from "@/assets/images/characters/chartitle.png";
+import banner_downloads from "@/assets/images/version.png";
 import char from "@/assets/images/characters/Social_char_1080p.png";
 import layla from "@/assets/images/characters/Social_layla_1080p.png";
 import liz from "@/assets/images/characters/Social_liz_1080p.png";
@@ -171,7 +171,7 @@ import mary from "@/assets/images/characters/Social_mary_1080p.png";
 export default {
   setup() {
     return {
-      titleCharacters,
+      banner_downloads,
       char,
       layla,
       liz,
@@ -184,14 +184,26 @@ export default {
 <style scoped>
 .container_download {
   min-height: 100vh;
-  padding-top: 4rem;
+  /* padding-top: 4rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .title {
+  background-image: url("@/assets/images/bgprim.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 300px;
   margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title img {
+  width: 50%;
 }
 
 .cont_links {
@@ -226,6 +238,12 @@ p {
   width: 15rem;
 }
 
+@media (max-width: 1400px) {
+  .title img {
+    width: 70%;
+  }
+}
+
 @media (max-width: 1250px) {
   .cont_links {
     width: 80%;
@@ -239,6 +257,14 @@ p {
 }
 
 @media (max-width: 800px) {
+  .title {
+    min-height: 250px;
+  }
+
+  .title img {
+    width: 80%;
+  }
+
   .cont_box {
     display: grid;
     place-items: center;
@@ -256,6 +282,14 @@ p {
 @media (max-width: 460px) {
   .cont_box img {
     width: 10rem;
+  }
+
+  .title {
+    min-height: 150px;
+  }
+
+  .title img {
+    width: 100%;
   }
 }
 </style>
