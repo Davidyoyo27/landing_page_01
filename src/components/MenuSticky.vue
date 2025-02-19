@@ -57,7 +57,10 @@ export default {
   /* Sombra lateral */
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  overflow-y: scroll;
+  /* Permite desplazamiento vertical si hay demasiados iconos */
+  overflow-y: auto;
+  scrollbar-width: thin; /* Ajusta el tamaño de la barra de desplazamiento */
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
   z-index: 1;
 }
 
@@ -87,6 +90,20 @@ img {
 
 a {
   padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+/* Personalización de la barra de desplazamiento en navegadores WebKit */
+.menu-overlay::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menu-overlay::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.menu-overlay::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 @media (max-width: 1250px) {
