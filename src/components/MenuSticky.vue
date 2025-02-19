@@ -44,16 +44,17 @@ export default {
   top: 10rem;
   right: 1rem;
   width: 6rem;
-  height: 50%;
-  background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
-  backdrop-filter: blur(10px); /* Efecto vidrio */
+  /* Fondo semitransparente */
+  background: rgba(255, 255, 255, 0.2);
+  /* Efecto vidrio */
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  /* VER SI EL BORDER SE QUEDA EN ESTE VALOR */
   border-radius: 2rem;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); /* Sombra lateral */
-  padding: 1rem;
+  /* Sombra lateral */
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   z-index: 1;
 }
@@ -82,6 +83,10 @@ img {
   height: 4rem;
 }
 
+a{
+  padding: .5rem 0rem .5rem 0rem;
+}
+
 @media (max-width: 1250px) {
   .menu_sticky {
     padding: 0.3rem;
@@ -102,9 +107,7 @@ img {
   .menu_sticky {
     top: 22rem;
     /* right: -2rem; */
-    width: 6rem;
-    height: 35%;
-    padding: 0rem;
+    height: 40%;
   }
 
   img {

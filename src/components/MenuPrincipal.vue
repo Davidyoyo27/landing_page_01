@@ -21,6 +21,9 @@
       <Transition name="fade">
         <div v-if="isOpen" class="menu-overlay">
           <nav class="menu-nav">
+            <router-link to="/" @click="closeMenu" class="menu-item"
+              >Home</router-link
+            >
             <router-link to="/about" @click="closeMenu" class="menu-item"
               >About</router-link
             >

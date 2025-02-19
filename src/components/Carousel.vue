@@ -39,10 +39,16 @@
       </div>
     </div>
     <div class="cont_buttons">
-      <a href="https://news.google.com/home?hl=es-419&gl=CL&ceid=CL:es-419" target="_blank" rel="external">
-        <img :src="button_patreon" alt="" class="img_patron">
+      <a
+        href="https://news.google.com/home?hl=es-419&gl=CL&ceid=CL:es-419"
+        target="_blank"
+        rel="external"
+      >
+        <img :src="button_patreon" alt="" class="img_patron" />
       </a>
-      <router-link to="/download" class="download_game">DOWNLOAD GAME</router-link>
+      <router-link to="/download" class="download_game"
+        >DOWNLOAD GAME</router-link
+      >
     </div>
   </div>
 </template>
@@ -263,7 +269,7 @@ export default {
   z-index: 1;
 }
 
-.img_patron{
+.img_patron {
   display: flex;
   width: 20rem;
   height: 6rem;
@@ -342,13 +348,20 @@ a:active:before {
   }
 
   .cont_buttons {
+    background-color: yellow;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
   }
 
-  /* .download_game */
-  .cont_buttons a {
-    margin-left: 2rem;
+  .cont_buttons a,
+  .cont_buttons .download_game {
+    margin-left: .5rem;
+  }
+
+  .img_patron {
+    width: 18rem;
+    height: 6rem;
   }
 }
 </style>
