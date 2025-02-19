@@ -44,6 +44,7 @@ export default {
   top: 10rem;
   right: 1rem;
   width: 6rem;
+  height: auto;
   /* Fondo semitransparente */
   background: rgba(255, 255, 255, 0.2);
   /* Efecto vidrio */
@@ -56,6 +57,7 @@ export default {
   /* Sombra lateral */
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  overflow-y: scroll;
   z-index: 1;
 }
 
@@ -83,8 +85,8 @@ img {
   height: 4rem;
 }
 
-a{
-  padding: .5rem 0rem .5rem 0rem;
+a {
+  padding: 0.5rem 0rem 0.5rem 0rem;
 }
 
 @media (max-width: 1250px) {
@@ -95,19 +97,9 @@ a{
 
 @media (max-width: 800px) {
   .menu_sticky {
-    top: 6rem;
-    right: 0.5rem;
-    width: 6rem;
-    height: 45%;
-    padding: 0rem;
-  }
-}
-
-@media (max-width: 460px) {
-  .menu_sticky {
     top: 22rem;
-    /* right: -2rem; */
-    height: 40%;
+    right: 0.5rem;
+    padding: 0rem;
   }
 
   img {

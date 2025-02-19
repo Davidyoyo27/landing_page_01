@@ -322,16 +322,16 @@ a:active:before {
     padding: 2rem 0rem 2rem 0rem;
   }
 
+  .cont_buttons {
+    display: grid;
+  }
+
   .cont_buttons button {
     font-size: 1.1rem;
   }
 }
 
 @media (max-width: 559px) {
-  .cont_buttons {
-    display: grid;
-  }
-
   .carousel {
     width: 85%;
   }
@@ -348,7 +348,7 @@ a:active:before {
   }
 
   .cont_buttons {
-    background-color: yellow;
+    /* background-color: yellow; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
