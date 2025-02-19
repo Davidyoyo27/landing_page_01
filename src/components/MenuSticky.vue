@@ -45,6 +45,8 @@ export default {
   right: 1rem;
   width: 6rem;
   height: auto;
+  /* Evita que se salga de la pantalla */
+  max-height: 50vh;
   /* Fondo semitransparente */
   background: rgba(255, 255, 255, 0.2);
   /* Efecto vidrio */
@@ -60,7 +62,7 @@ export default {
   /* Permite desplazamiento vertical si hay demasiados iconos */
   overflow-y: auto;
   scrollbar-width: thin; /* Ajusta el tamaño de la barra de desplazamiento */
-  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  scrollbar-color: rgba(0, 0, 0, 0) transparent;
   z-index: 1;
 }
 
