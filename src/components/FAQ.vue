@@ -5,7 +5,6 @@
     </div>
     <div class="container_faq">
       <div v-for="(item, index) in faqList" :key="index" class="faq-item">
-        <!-- Pregunta -->
         <p
           class="question"
           @click="toggleAnswer(index)"
@@ -13,8 +12,6 @@
         >
           {{ item.question }}
         </p>
-
-        <!-- Respuesta con transición -->
         <Transition name="slide">
           <p
             v-if="item.isVisible"
@@ -29,7 +26,7 @@
 
 <script>
 import { ref } from "vue";
-import FAQ from "@/assets/images/FAQ/FAQ.png";
+import FAQ from "@/assets/images/FAQ/FAQ.webp";
 
 export default {
   setup() {
@@ -49,7 +46,6 @@ export default {
           "Yes, saves from old versions are compatible, so you can continue from where you left off. The only exception is the Android version, since in that case you have to make a manual backup of your saved games.",
         isVisible: false,
         isSpoiler: false,
-        nameLink: "yutup",
       },
       {
         question: "How can I update the on Android without losing my saves?",
@@ -147,12 +143,10 @@ export default {
       },
     ]);
 
-    // funcion que abre la caja de texto con la respuesta a la pregunta
     const toggleAnswer = (index) => {
       faqList.value[index].isVisible = !faqList.value[index].isVisible;
     };
 
-    // función para convertir URLs en enlaces clickeables
     const formatAnswer = (text) => {
       const urlRegex = /(https?:\/\/[^\s]+)/g;
       return text.replace(
@@ -173,7 +167,6 @@ export default {
 
 <style scoped>
 .is-spoiler {
-  /* Sombra roja difuminada */
   box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);
 }
 
@@ -210,8 +203,6 @@ export default {
   cursor: pointer;
   color: #cacaca;
   padding: 0.3rem 0rem 0.3rem 1rem;
-  /* 10px */
-  /* border-radius: 5px;   */
 }
 
 .question:hover {
@@ -225,7 +216,6 @@ export default {
   background-color: #f0f8ff;
 }
 
-/* Transición de deslizamiento */
 .slide-enter-active,
 .slide-leave-active {
   transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -240,7 +230,6 @@ export default {
 
 .slide-enter-to,
 .slide-leave-from {
-  /* Ajusta según la altura del texto */
   max-height: 200px;
   opacity: 1;
 }

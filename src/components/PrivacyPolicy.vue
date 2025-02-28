@@ -1,9 +1,18 @@
 <template>
   <div class="container_privacy">
-    <p>Page in construction...</p>
-    <p>We are working for you! :)</p>
+    <img :src="in_construction_img" alt="">
   </div>
 </template>
+
+<script>
+import in_construction_img from "@/assets/images/comingsoon_1080p.webp"
+
+export default {
+  setup() {
+    return {in_construction_img};
+  },
+};
+</script>
 
 <style scoped>
 .container_privacy {
@@ -13,7 +22,7 @@
   justify-content: center;
 }
 
-p {
-  color: #cacaca;
+img{
+  width: 100%;
 }
 </style>

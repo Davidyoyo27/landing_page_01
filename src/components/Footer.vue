@@ -6,7 +6,7 @@
       </router-link>
       <div class="cont_links">
         <div class="links">
-          <a href="https://discord.com/" target="_blank" rel="external">discord</a>
+          <a href="https://discord.com/invite/vb33F5v" target="_blank" rel="external">discord</a>
           <router-link to="/privacy_policy">privacy policy</router-link>
         </div>
         <p>© 2025 Ddraigx Productions. All Rights Reserved</p>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import logo from "@/assets/images/logo.png";
+import logo from "@/assets/images/logo_converted.webp";
 
 export default {
   setup() {

@@ -31,15 +31,15 @@
 </template>
 
 <script>
-import titleCharacters from "@/assets/images/characters/chartitle.png";
-import char from "@/assets/images/characters/Social_char_1080p.png";
-import layla from "@/assets/images/characters/Social_layla_1080p.png";
-import liz from "@/assets/images/characters/Social_liz_1080p.png";
-import mary from "@/assets/images/characters/Social_mary_1080p.png";
-import maxy from "@/assets/images/characters/Social_maxy_1080p.png";
-import prim from "@/assets/images/characters/Social_prim_1080p.png";
-import sasha from "@/assets/images/characters/Social_sasha_1080p.png";
-import yui from "@/assets/images/characters/Social_yui_1080p.png";
+import titleCharacters from "@/assets/images/characters/chartitle_converted.webp";
+import char from "@/assets/images/characters/Social_char_1080p_converted.webp";
+import layla from "@/assets/images/characters/Social_layla_1080p_converted.webp";
+import liz from "@/assets/images/characters/Social_liz_1080p_converted.webp";
+import mary from "@/assets/images/characters/Social_mary_1080p_converted.webp";
+import maxy from "@/assets/images/characters/Social_maxy_1080p_converted.webp";
+import prim from "@/assets/images/characters/Social_prim_1080p_converted.webp";
+import sasha from "@/assets/images/characters/Social_sasha_1080p_converted.webp";
+import yui from "@/assets/images/characters/Social_yui_1080p_converted.webp";
 
 export default {
   setup() {
@@ -72,7 +72,7 @@ export default {
   flex-wrap: wrap;
   margin-top: 4rem;
   max-width: 80rem;
-  gap: 4rem;
+  gap: 1rem;
 }
 
 .box {
@@ -91,5 +91,17 @@ export default {
 
 .box img {
   width: 15rem;
+}
+
+@media (max-width: 800px) {
+  .box img {
+    width: 13rem;
+  }
+}
+
+@media (max-width: 610px) {
+  .box img {
+    width: 8rem;
+  }
 }
 </style>

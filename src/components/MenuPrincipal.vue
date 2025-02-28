@@ -10,14 +10,11 @@
       <a :href="linkWiki" target="_blank" rel="external">Wiki</a>
     </div>
     <div class="cont_menu_mob">
-      <!-- Botón de menú -->
       <div class="menu-icon" :class="{ open: isOpen }" @click="toggleMenu">
         <span></span>
         <span></span>
         <span></span>
       </div>
-
-      <!-- Menú Móvil -->
       <Transition name="fade">
         <div v-if="isOpen" class="menu-overlay">
           <nav class="menu-nav">
@@ -55,12 +52,12 @@
 
 <script>
 import { ref } from "vue";
-import logo from "@/assets/images/logo.png";
+import logo from "@/assets/images/logo_converted.webp";
 
 export default {
   setup() {
-    const linkPatreon = ref("https://www.google.com");
-    const linkWiki = ref("https://www.youtube.com");
+    const linkPatreon = ref("https://www.patreon.com/c/stawer");
+    const linkWiki = ref("https://lucky-paradox.fandom.com/wiki/Lucky_Paradox_Wiki");
     const isOpen = ref(false);
 
     const toggleMenu = () => {

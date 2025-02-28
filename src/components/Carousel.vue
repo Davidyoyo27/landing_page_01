@@ -1,7 +1,6 @@
 <template>
   <div class="background_container">
     <div v-if="isLoaded" class="carousel">
-      <!-- Imagenes -->
       <div class="carousel_container">
         <a
           v-if="objImages[currentIndex].link"
@@ -22,12 +21,8 @@
           class="carousel_image_no_link"
         />
       </div>
-
-      <!-- Controles -->
       <button @click="prevImage" class="carousel_btn left">&#10094;</button>
       <button @click="nextImage" class="carousel_btn right">&#10095;</button>
-
-      <!-- Indicadores -->
       <div class="indicators">
         <span
           v-for="(slide, index) in objImages"
@@ -39,11 +34,7 @@
       </div>
     </div>
     <div class="cont_buttons">
-      <a
-        href="https://news.google.com/home?hl=es-419&gl=CL&ceid=CL:es-419"
-        target="_blank"
-        rel="external"
-      >
+      <a href="https://www.patreon.com/c/stawer" target="_blank" rel="external">
         <img :src="button_patreon" alt="" class="img_patron" />
       </a>
       <router-link to="/download" class="download_game"
@@ -56,10 +47,10 @@
 <script>
 import { ref, onMounted, onUnmounted } from "vue";
 // importar las imagenes de la carpeta "news" y asignarles un nombre
-import image1 from "@/assets/images/news/image1.png";
-import image2 from "@/assets/images/news/image2.png";
-import image3 from "@/assets/images/news/image3.png";
-import button_patreon from "@/assets/images/socialmedia/patreon-1-892x610.png";
+import image1 from "@/assets/images/news/February18_1080p.webp";
+import image2 from "@/assets/images/news/Release100_1080p.webp";
+import image3 from "@/assets/images/news/February4_1080p.webp";
+import button_patreon from "@/assets/images/socialmedia/Patreonbutton_converted.webp";
 
 export default {
   setup() {
@@ -70,42 +61,40 @@ export default {
       {
         // EJ: imagen con link
         image: image1,
-        link: "https://google.com",
+        link: "https://www.patreon.com/posts/crafting-lucky-122290661",
       },
       // EJ: imagen sin link
-      { image: image2 },
+      { image: image2, 
+        link: "https://www.patreon.com/posts/lucky-paradox-v0-122287195",
+       },
       {
         image: image3,
-        link: "https://github.com",
+        link: "https://www.patreon.com/posts/crafting-lucky-121508747",
       },
     ]);
 
     const currentIndex = ref(0);
     let interval = null;
 
-    // Función para avanzar
     const nextImage = () => {
       currentIndex.value = (currentIndex.value + 1) % objImages.value.length;
     };
 
-    // Función para retroceder
     const prevImage = () => {
       currentIndex.value =
         (currentIndex.value - 1 + objImages.value.length) %
         objImages.value.length;
     };
 
-    // Ir a una imagen específica
     const goToImage = (index) => {
       currentIndex.value = index;
     };
 
-    // Iniciar el auto-slide
+    // valor a cambiar segun la cantidad de tiempo por imagen en el carrusel
     const startAutoSlide = () => {
       interval = setInterval(nextImage, 5000);
     };
 
-    // Detener el auto-slide
     const stopAutoSlide = () => {
       clearInterval(interval);
     };
@@ -149,7 +138,7 @@ export default {
 
 <style scoped>
 .background_container {
-  background-image: url("@/assets/images/bgprim.png");
+  background-image: url("@/assets/images/bgprim_converted.webp");
   width: 100%;
   min-height: 500px;
   background-size: cover;
@@ -161,10 +150,11 @@ export default {
 
 .carousel {
   position: relative;
-  width: 70%;
+  width: 60%;
   margin: auto;
   overflow: hidden;
   border-radius: 10px;
+  box-shadow: 0px 0px 20px 20px rgba(32, 32, 32, 0.7);
 }
 
 .carousel_container {
@@ -175,6 +165,7 @@ export default {
 }
 
 .carousel_container a {
+  background-color: rgb(32, 32, 32, .7);
   display: block;
   width: 100%;
   height: 100%;
@@ -272,8 +263,7 @@ export default {
 .img_patron {
   display: flex;
   width: 20rem;
-  height: 6rem;
-  box-shadow: 7px 10px 10px 1px rgba(255, 255, 255, 0.2);
+  height: 7rem;
 }
 
 .cont_buttons .download_game:before {
@@ -329,6 +319,10 @@ a:active:before {
   .cont_buttons button {
     font-size: 1.1rem;
   }
+
+  .carousel {
+    width: 70%;
+  }
 }
 
 @media (max-width: 559px) {
@@ -348,15 +342,14 @@ a:active:before {
   }
 
   .cont_buttons {
-    /* background-color: yellow; */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .cont_buttons a,
   .cont_buttons .download_game {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 
   .img_patron {
