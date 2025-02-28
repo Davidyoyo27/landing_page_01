@@ -7,7 +7,6 @@
       <div class="cont_box">
         <img :src="mediafire_img_title" alt="imagen gestor de descarga" />
         <div class="links">
-          <h2>MEDIAFIRE LINKS:</h2>
           <div class="link">
             <a href="https://www.mediafire.com/file_premium/68o48tcsapp5vdf/Lucky_Paradox-v0.9.5Final-pc.zip/file" target="_blank" rel="external">
               <img :src="win_linux_img" alt="imagen tipo de dispositivo">
@@ -33,7 +32,6 @@
       <div class="cont_box">
         <img :src="drive_img_title" alt="" />
         <div class="links">
-          <h2>GOOGLE DRIVE LINKS:</h2>
           <div class="link">
             <a href="https://drive.google.com/file/d/1YGVNt4R_Al81ENL9TwKvrsIG88P9BfbU/view?usp=sharing" target="_blank" rel="external">
               <img :src="win_linux_img" alt="imagen tipo de dispositivo">
@@ -59,7 +57,6 @@
       <div class="cont_box">
         <img :src="mega_img_title" alt="" />
         <div class="links">
-          <h2>MEGA LINKS:</h2>
           <div class="link">
             <a href="https://mega.nz/file/bzJxiC7D#19Ds2KmA1yXqOx3rqU0szHMytuCZ-1riZhHW8C1OQJ4" target="_blank" rel="external">
               <img :src="win_linux_img" alt="imagen tipo de dispositivo">
@@ -83,15 +80,8 @@
         </div>
       </div>
       <div class="cont_box">
+        <img :src="update_img_title" class="img_update" alt="">
         <div class="links">
-          <h2>LINKS:</h2>
-          <p>
-            If you just prefer to download the new content, and you already have
-            version 0.9.4, just unzip and then copy and paste the content into
-            the Lucky Paradox game folder, if it asks you to replace, press YES!
-            MEGA
-          </p>
-          <p>UPDATE PATCH:</p>
           <div class="link">
             <a href="https://mega.nz/file/Gmo3CDAb#xHXwWXs9kmnh0RUtlqUqEQ_8B_HdqaS7jxoAbDipqP8" target="_blank" rel="external">
               <img :src="mega_img_title" alt="imagen gestor de descarga" />
@@ -124,6 +114,7 @@ import win_linux_img from "@/assets/images/download/Bannerwindows_converted.webp
 import android_img from "@/assets/images/download/Bannerandroid_converted.webp";
 import mac_img from "@/assets/images/download/BannerMAC_converted.webp";
 import compressed_img from "@/assets/images/download/Bannercompress_converted.webp";
+import update_img_title from "@/assets/images/download/BannerUpdate_converted.webp";
 
 export default {
   setup() {
@@ -138,6 +129,7 @@ export default {
       mac_img,
       win_linux_img,
       compressed_img,
+      update_img_title,
     };
   },
 };
@@ -189,6 +181,10 @@ export default {
 
 .links img{
   width: 8rem;
+}
+
+.img_update{
+  width: 10rem;
 }
 
 .link{

@@ -37,9 +37,9 @@
       <a href="https://www.patreon.com/c/stawer" target="_blank" rel="external">
         <img :src="button_patreon" alt="" class="img_patron" />
       </a>
-      <router-link to="/download" class="download_game"
-        >DOWNLOAD GAME</router-link
-      >
+      <router-link to="/download">
+        <img :src="button_download" alt="" class="img_patron" />
+      </router-link>
     </div>
   </div>
 </template>
@@ -50,7 +50,8 @@ import { ref, onMounted, onUnmounted } from "vue";
 import image1 from "@/assets/images/news/February18_1080p.webp";
 import image2 from "@/assets/images/news/Release100_1080p.webp";
 import image3 from "@/assets/images/news/February4_1080p.webp";
-import button_patreon from "@/assets/images/socialmedia/Patreonbutton_converted.webp";
+import button_patreon from "@/assets/images/news/Patreonbuttontest_converted.webp";
+import button_download from "@/assets/images/news/Downloadbutton_converted.webp";
 
 export default {
   setup() {
@@ -63,14 +64,16 @@ export default {
         image: image1,
         link: "https://www.patreon.com/posts/crafting-lucky-122290661",
       },
-      // EJ: imagen sin link
-      { image: image2, 
+      {
+        image: image2,
         link: "https://www.patreon.com/posts/lucky-paradox-v0-122287195",
-       },
+      },
       {
         image: image3,
         link: "https://www.patreon.com/posts/crafting-lucky-121508747",
       },
+      // EJ: imagen sin link
+      // { image: image1 },
     ]);
 
     const currentIndex = ref(0);
@@ -131,6 +134,7 @@ export default {
       startAutoSlide,
       isLoaded,
       button_patreon,
+      button_download,
     };
   },
 };
@@ -165,7 +169,7 @@ export default {
 }
 
 .carousel_container a {
-  background-color: rgb(32, 32, 32, .7);
+  background-color: rgb(32, 32, 32, 0.7);
   display: block;
   width: 100%;
   height: 100%;
@@ -239,41 +243,10 @@ export default {
   gap: 3rem;
 }
 
-.cont_buttons .download_game {
-  --color: #560bad;
-  font-family: inherit;
-  display: inline-block;
-  width: 12em;
-  line-height: 2.5em;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  border: 2px solid var(--color);
-  transition: color 0.5s;
-  font-size: 1.5rem;
-  border-radius: 6px;
-  font-weight: 600;
-  color: rgb(254, 33, 246);
-  background-color: rgba(77, 29, 84, 0.5);
-  text-decoration: none;
-  text-align: center;
-  z-index: 1;
-}
-
 .img_patron {
   display: flex;
   width: 20rem;
   height: 7rem;
-}
-
-.cont_buttons .download_game:before {
-  content: "";
-  position: absolute;
-  background: var(--color);
-  height: 120px;
-  width: 400px;
-  border-radius: 50%;
-  z-index: -1;
 }
 
 a:hover {
@@ -345,11 +318,6 @@ a:active:before {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .cont_buttons a,
-  .cont_buttons .download_game {
-    margin-left: 0.5rem;
   }
 
   .img_patron {
